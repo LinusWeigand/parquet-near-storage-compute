@@ -1,0 +1,48 @@
+[package]
+name = "microbenchmarks"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.20", features = ["derive"] }
+tokio = { version = "1.43.0", features = ["full"] }
+rand = "0.9.0"
+futures = "0.3.31"
+async-channel = "1.9.0"
+bytes = "1.10.0"
+futures-util = "0.3.31"
+reqwest = { version = "0.12.12", default-features = false, features = ["stream"] }
+hyper = { version = "0.14", features = ["full"] }
+libc = "0.2.169"
+
+[[bin]]
+name = "network-server"
+path = "src/network/server.rs"
+
+[[bin]]
+name = "network-client"
+path = "src/network/client.rs"
+
+[[bin]]
+name = "disk-read"
+path = "src/disk/read.rs"
+
+[[bin]]
+name = "disk-write"
+path = "src/disk/write.rs"
+
+[[bin]]
+name = "network-disk-server"
+path = "src/network_disk/server.rs"
+
+[[bin]]
+name = "network-disk-client"
+path = "src/network_disk/client.rs"
+
+[[bin]]
+name = "http-server"
+path = "src/http/server.rs"
+
+[[bin]]
+name = "http-client"
+path = "src/http/client.rs"
